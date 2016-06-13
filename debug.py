@@ -1,6 +1,7 @@
 import clusters
 from Manhattan_distance import Manhattan_distance
 from K_clustering import kcluster
+from difference_K_clusters import difference_kcluster
 
 blognames,words,data=clusters.readfile('blogdata.txt')
 clust=clusters.hcluster(data)
@@ -16,6 +17,9 @@ clusters.printclust(clust1,labels=blognames)
 # print len(data[1])
 # print Manhattan_distance(data[0],data[1])
 
-bestmatches,dis,clusters=kcluster(data)
-print dis
-print clusters
+# bestmatches,dis,clusters=kcluster(data)
+# print dis
+# print clusters
+
+dis_K=difference_kcluster(data)
+print dis_K
