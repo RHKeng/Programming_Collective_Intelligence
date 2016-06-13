@@ -25,15 +25,20 @@ clusters.printclust(clust1,labels=blognames)
 # dis_K=difference_kcluster(data)
 # print dis_K
 
-import nn
-mynet=nn.searchnet('nn,db')
-# mynet.maketables()
-wWorld,wRiver,wBank =101,102,103
-uWorldBank,uRiver,uEarth =201,202,203
-mynet.generatehiddennode([wWorld,wBank],[uWorldBank,uRiver,uEarth])
-for c in mynet.con.execute('select * from wordhidden'):print c
+# import nn
+# mynet=nn.searchnet('nn,db')
+# # mynet.maketables()
+# wWorld,wRiver,wBank =101,102,103
+# uWorldBank,uRiver,uEarth =201,202,203
+# mynet.generatehiddennode([wWorld,wBank],[uWorldBank,uRiver,uEarth])
+# for c in mynet.con.execute('select * from wordhidden'):print c
+#
+# for c in mynet.con.execute('select * from hiddenurl'):print c
+#
+# mynet.trainquery([wWorld,wBank],[uWorldBank,uRiver,uEarth],uWorldBank)
+# mynet.getresult([wWorld,wBank],[uWorldBank,uRiver,uEarth])
 
-for c in mynet.con.execute('select * from hiddenurl'):print c
-
-mynet.trainquery([wWorld,wBank],[uWorldBank,uRiver,uEarth],uWorldBank)
-mynet.getresult([wWorld,wBank],[uWorldBank,uRiver,uEarth])
+s=[1,4,3,2,7,3,6,3,2,4,5,3]
+from improve_schedulecost import improve_schedulecost
+money=improve_schedulecost(s)
+print 'totalprice='+str(money)
