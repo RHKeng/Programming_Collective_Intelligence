@@ -62,8 +62,4 @@ def improve_schedulecost(sol):
   # Does this solution require an extra day of car rental? That'll be $50!
   if latestarrival>earliestdep: totalprice+=50
 
-  print totalprice
-  print totalwait
-  print totalfly
-  print totalfine
   return totalprice+totalwait+totalfly*0.5+totalfine
