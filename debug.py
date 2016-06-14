@@ -42,3 +42,12 @@ s=[1,4,3,2,7,3,6,3,2,4,5,3]
 from improve_schedulecost import improve_schedulecost
 money=improve_schedulecost(s)
 print 'totalprice='+str(money)
+
+from annealing_algorithm import annealing_algorithm
+from optimization import schedulecost
+from optimization import people
+from optimization import printschedule
+domain=[(0,9)]*(len(people)*2)
+s,costf=annealing_algorithm(domain,schedulecost)
+printschedule(s)
+print costf
