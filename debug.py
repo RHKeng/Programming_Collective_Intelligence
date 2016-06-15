@@ -4,13 +4,13 @@ from Manhattan_distance import Manhattan_distance
 from K_clustering import kcluster
 from difference_K_clusters import difference_kcluster
 
-blognames,words,data=clusters.readfile('blogdata.txt')
-clust=clusters.hcluster(data)
-clust1=clusters.hcluster(data,distance=Manhattan_distance)
-
-reload(clusters)
-clusters.printclust(clust,labels=blognames)
-clusters.printclust(clust1,labels=blognames)
+# blognames,words,data=clusters.readfile('blogdata.txt')
+# clust=clusters.hcluster(data)
+# clust1=clusters.hcluster(data,distance=Manhattan_distance)
+#
+# reload(clusters)
+# clusters.printclust(clust,labels=blognames)
+# clusters.printclust(clust1,labels=blognames)
 
 # print data[0]
 # print len(data[0])
@@ -37,17 +37,25 @@ clusters.printclust(clust1,labels=blognames)
 #
 # mynet.trainquery([wWorld,wBank],[uWorldBank,uRiver,uEarth],uWorldBank)
 # mynet.getresult([wWorld,wBank],[uWorldBank,uRiver,uEarth])
-
-s=[1,4,3,2,7,3,6,3,2,4,5,3]
-from improve_schedulecost import improve_schedulecost
-money=improve_schedulecost(s)
-print 'totalprice='+str(money)
+#
+# s=[1,4,3,2,7,3,6,3,2,4,5,3]
+# from improve_schedulecost import improve_schedulecost
+# money=improve_schedulecost(s)
+# print 'totalprice='+str(money)
 
 from annealing_algorithm import annealing_algorithm
 from optimization import schedulecost
 from optimization import people
 from optimization import printschedule
 domain=[(0,9)]*(len(people)*2)
-s,costf=annealing_algorithm(domain,schedulecost)
+# s,costf=annealing_algorithm(domain,schedulecost)
+# printschedule(s)
+# print costf
+
+from genetic_algorithm import genetic_algorithm
+s=genetic_algorithm(domain,schedulecost)
 printschedule(s)
-print costf
+
+# from optimization import geneticoptimize
+# s=geneticoptimize(domain,schedulecost)
+# printschedule(s)
